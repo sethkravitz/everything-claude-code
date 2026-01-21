@@ -1,0 +1,15 @@
+#!/bin/bash
+# Empty trash (REQUIRES APPROVAL - not auto-allowed)
+# Usage: trash-empty [--force]
+
+TRASH_DIR="$HOME/.claude/.trash"
+
+if [ "$1" = "--force" ]; then
+    rm -rf "$TRASH_DIR"/*
+    echo "Trash emptied"
+else
+    echo "Files to be permanently deleted:"
+    ls "$TRASH_DIR" 2>/dev/null || echo "(none)"
+    echo ""
+    echo "Run 'trash-empty --force' to confirm"
+fi

@@ -1,0 +1,19 @@
+#!/bin/bash
+# Safe delete: moves files to trash instead of permanent deletion
+# Usage: trash <file1> [file2] ...
+
+TRASH_DIR="$HOME/.claude/.trash"
+DATE=$(date +%Y%m%d_%H%M%S)
+
+mkdir -p "$TRASH_DIR"
+
+for file in "$@"; do
+    if [ -e "$file" ]; then
+        basename=$(basename "$file")
+        trash_name="${DATE}_${basename}"
+        mv "$file" "$TRASH_DIR/$trash_name"
+        echo "Trashed: $file → $TRASH_DIR/$trash_name"
+    else
+        echo "Not found: $file"
+    fi
+done

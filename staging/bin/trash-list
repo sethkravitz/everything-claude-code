@@ -1,0 +1,3 @@
+#!/bin/bash
+# List contents of trash
+ls -la "$HOME/.claude/.trash" 2>/dev/null || echo "Trash is empty"

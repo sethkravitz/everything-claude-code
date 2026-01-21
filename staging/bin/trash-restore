@@ -1,0 +1,22 @@
+#!/bin/bash
+# Restore a file from trash
+# Usage: trash-restore <trashed_filename> [destination]
+
+TRASH_DIR="$HOME/.claude/.trash"
+FILE="$1"
+DEST="${2:-.}"
+
+if [ -z "$FILE" ]; then
+    echo "Usage: trash-restore <filename> [destination]"
+    exit 1
+fi
+
+if [ -e "$TRASH_DIR/$FILE" ]; then
+    original_name=$(echo "$FILE" | sed 's/^[0-9]*_[0-9]*_//')
+    mv "$TRASH_DIR/$FILE" "$DEST/$original_name"
+    echo "Restored: $DEST/$original_name"
+else
+    echo "Not found in trash: $FILE"
+    echo "Available files:"
+    ls "$TRASH_DIR"
+fi

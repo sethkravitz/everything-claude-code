@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(*node tools/x-evaluator/fetch-x-post-openrouter.js*)",
+      "Bash(*tools/x-evaluator/evaluate.sh*)",
+      "Bash(cd * && node tools/x-evaluator/fetch-x-post-openrouter.js*)"
+    ]
+  }
+}

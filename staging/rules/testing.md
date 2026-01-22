@@ -1,0 +1,35 @@
+# Testing Rules
+
+## Test Framework
+
+**ALWAYS use VITEST for tests, not bun:test.**
+
+This is non-negotiable. The project uses Vitest.
+
+## TDD Default
+
+Test-Driven Development is the default for all work EXCEPT `/spike` mode.
+
+1. Write failing test first (RED)
+2. Implement minimal code to pass (GREEN)
+3. Refactor while tests pass (REFACTOR)
+
+## When to Write Tests
+
+- Bug fix → Write test that reproduces bug FIRST
+- New feature → Write tests alongside implementation
+- Refactor → Ensure tests exist before changing
+
+## Test Quality
+
+- Test behavior, not implementation
+- One assertion per test when practical
+- Descriptive test names: "should reject empty input"
+- No console.log in tests
+
+## Coverage
+
+- Aim for meaningful coverage, not 100%
+- Critical paths MUST be covered
+- Edge cases MUST be covered
+- Happy path alone is insufficient

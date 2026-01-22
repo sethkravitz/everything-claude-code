@@ -146,6 +146,31 @@ From [ChrisWiles/claude-code-showcase](https://github.com/ChrisWiles/claude-code
 
 ---
 
+## Evaluated Resources
+
+Resources evaluated using the [EVALUATE.md](EVALUATE.md) framework:
+
+| Date | Resource | Category | Recommendation | Notes |
+|------|----------|----------|----------------|-------|
+| *None yet* | | | | |
+
+### Evaluation Log
+
+When evaluating a new resource, add:
+1. A row to the table above with summary
+2. Full evaluation to `docs/evaluations/<resource-name>.md` if MICRO-TEST or ADOPT
+
+### Recommendation Key
+
+| Decision | Meaning |
+|----------|---------|
+| **IGNORE** | Not useful, too much hype, doesn't fit |
+| **PARK** | Interesting but not now |
+| **MICRO-TEST** | ≤2 hours to try in staging/ |
+| **ADOPT** | Add to staging/, test, deploy |
+
+---
+
 ## Notes
 
 *Add your own notes and findings here as you experiment.*
